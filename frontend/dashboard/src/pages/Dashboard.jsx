@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
 
     // 1️⃣ fetch students
-    fetch("http://localhost:5000/api/students")
+    fetch("https://teacherdashboard-ixp3.onrender.com/api/students")
       .then(res => res.json())
       .then(async (students) => {
 
@@ -25,7 +25,7 @@ const Dashboard = () => {
         await Promise.all(
           students.map(async (s) => {
             const res = await fetch(
-              `http://localhost:5000/api/observations/${s._id}`
+              `https://teacherdashboard-ixp3.onrender.com/api/observations/${s._id}`
             );
             const obs = await res.json();
 

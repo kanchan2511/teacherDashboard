@@ -21,12 +21,12 @@ const StudentDetail = () => {
 
   // ✅ Fetch student + observations together
   useEffect(() => {
-    fetch(`http://localhost:5000/api/students/${id}`)
+    fetch(`https://teacherdashboard-ixp3.onrender.com/api/students/${id}`)
       .then(res => res.json())
       .then(data => setStudent(data))
       .catch(console.error);
 
-    fetch(`http://localhost:5000/api/observations/${id}`)
+    fetch(`https://teacherdashboard-ixp3.onrender.com/api/observations/${id}`)
       .then(res => res.json())
       .then(data => setObservations(data))
       .catch(console.error);
@@ -64,7 +64,7 @@ const StudentDetail = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/observations", {
+      const res = await fetch("https://teacherdashboard-ixp3.onrender.com/api/observations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

@@ -15,14 +15,14 @@ const filteredStudents = students.filter((s) => {
   return matchName && matchClass;
 });
 useEffect(() => {
-  fetch("http://localhost:5000/api/students")
+  fetch("https://teacherdashboard-ixp3.onrender.com/api/students")
     .then(res => res.json())
     .then(data => setStudents(data))
     .catch(err => console.error(err));
 }, []);
 useEffect(() => {
   students.forEach((s) => {
-    fetch(`http://localhost:5000/api/observations/${s._id}`)
+    fetch(`https://teacherdashboard-ixp3.onrender.com/api/observations/${s._id}`)
       .then(res => res.json())
       .then(data =>
         setCounts(prev => ({ ...prev, [s._id]: data.length }))
